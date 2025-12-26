@@ -11,9 +11,28 @@
     $(document).ready(function() {
        $("#btn").click(function(event){
         $.getJSON('/data.json', function (jqdata) {
-               $('#').append(jqdata.title);
-               $('#showinfo p:nth-child(2)').append('AGE: ' + jqdata.age);
-               $('#showinfo p:last-child').append('SEX: ' + jqdata.sex);
+               $('caption').append(jqdata.title);
+               <!-- $('tr').append(jqdata.heading); -->
+               $('#showheading th:first-child').append(jqdata.heading);
+                $('#showheading th:nth-child(2)').append(jqdata.head1);
+                $('#showheading th:nth-child(3)').append(jqdata.head2);
+                $('#showheading th:nth-child(4)').append(jqdata.head3);
+                $('#showheading th:last-child').append(jqdata.head4);
+                $('#showcalories td:first-child').append(jqdata.subheadcal);
+                $('#showcalories td:nth-child(2)').append(jqdata.cal1);
+                $('#showcalories td:nth-child(3)').append(jqdata.cal2);
+                $('#showcalories td:nth-child(4)').append(jqdata.cal3);
+                $('#showcalories td:last-child').append(jqdata.cal4);
+                $('#showfat td:first-child').append(jqdata.subheadfat);
+                $('#showfat td:nth-child(2)').append(jqdata.fat1);
+                $('#showfat td:nth-child(3)').append(jqdata.fat2);
+                $('#showfat td:nth-child(4)').append(jqdata.fat3);
+                $('#showfat td:last-child').append(jqdata.fat4);
+                $('#showven td:first-child').append(jqdata.subheadven);
+                $('#showven td:nth-child(2)').append(jqdata.ven1);
+                $('#showven td:nth-child(3)').append(jqdata.ven2);
+                $('#showven td:nth-child(4)').append(jqdata.ven3);
+                $('#showven td:last-child').append(jqdata.ven4);
            });
        });
     });
@@ -38,7 +57,7 @@
   <p>My Second paragraph.</p>
 
   <table>
-    <!--<caption></caption>
+    <caption></caption>
     <thead>
         <tr id="showheading">
             <th></th>
@@ -72,7 +91,7 @@
             <td></td>
             <td></td>
         </tr>
-    </tfoot>-->
+    </tfoot>
     </table>
 
     <input type = "button" id = "btn" value = "Load Data" style="margin-top:20px;" />
